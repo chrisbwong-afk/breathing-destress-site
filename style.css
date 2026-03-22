@@ -1,0 +1,110 @@
+body {
+    background-color: var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 200px;
+}
+
+#circle {
+    background-color: var(--blue);
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--dark-blue);
+
+    transition: 
+        scale 4s ease,
+        border-color 4s ease;
+    animation: breathe 16s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.4);
+        border-color: var(--white);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+audio {
+    display: none;
+}
+
+[data-lucide] {
+    position: absolute;
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    stroke-width: 2px;
+    cursor: pointer;
+
+    animation: iconbreathe 16s ease-in-out infinite;
+}
+
+@keyframes iconbreathe {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.4);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+p {
+    position: absolute;
+    font-size: 920px;
+    color: var(--white);
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    opacity: 0;
+    animation: counting 4s ease-in-out infinite;
+    padding: 0px;
+}
+
+p#count2 {
+    animation-delay: 1s;
+}
+
+p#count3 {
+    animation-delay: 2s;
+}
+
+p#count4 {
+    animation-delay: 3s;
+}
+
+@keyframes counting {
+    0% {
+        opacity: 0.2;
+    }
+    25% {
+        opacity: 0;
+    }
+}

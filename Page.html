@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Calm</title>
+        <link rel="stylesheet" href="globalvariables.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
+
+    <body>
+        <div id="circle">
+            <i data-lucide="volume-off" id="mute"></i>
+            <i data-lucide="volume-2" id="unmute" class="opacity: 0;"></i>
+        </div>
+        <audio muted autoplay loop id="bg-audio">
+            <source src="Ame.mp3" type="audio/mpeg">
+        </audio>
+        <p class="count" id="count1">1</p>
+        <p class="count" id="count2">2</p>
+        <p class="count" id="count3">3</p>
+        <p class="count" id="count4">4</p>
+
+    </body>
+
+    <script>
+        window.onload = () => {
+            const audio = document.getElementById('bg-audio');
+            audio.play();
+            lucide.createIcons();
+        };
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bg-audio');
+            const muteicon = document.getElementById('mute');
+            const unmuteicon = document.getElementById('unmute');
+            if (audio.muted) {
+                audio.muted = false;
+                audio.play();
+                audio.volume = 0.75;
+
+                muteicon.style.opacity = '0';
+                unmuteicon.style.opacity = '1';
+            } else {
+                audio.muted = true;
+                muteicon.style.opacity = '1';
+                unmuteicon.style.opacity = '0';
+                audio.volume = 0;
+            }
+        });
+    </script>
+
+</html>
