@@ -86,6 +86,8 @@ p {
     opacity: 0;
     animation: counting 4s ease-in-out infinite;
     padding: 0px;
+    cursor: default;
+    user-select: none;
 }
 
 p#count2 {
